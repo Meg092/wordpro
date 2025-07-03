@@ -11,7 +11,7 @@ class BulletScrollView extends GetView<BulletScrollLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.daugherty.value
+          () => controller.bayer.value
               ? const CircularProgressIndicator(color: Colors.blue)
               : buildError(),
         ),
@@ -26,7 +26,7 @@ class BulletScrollView extends GetView<BulletScrollLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.sknjfqlm();
+              controller.eirou();
             },
             icon: const Icon(
               Icons.restart_alt,

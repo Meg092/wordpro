@@ -24,7 +24,7 @@ class BulletFailView extends GetView<BulletFailLogic> {
               height: 125,
             ),
             const Text(
-              'I was distracted on the Internet',
+              'Network support is required, please check the network connection',
               style: TextStyle(color: Colors.black45),
             ),
             const SizedBox(

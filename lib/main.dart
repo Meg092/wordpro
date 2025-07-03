@@ -1,12 +1,15 @@
 import 'package:bullet_comments/db_bullet/db_bullet.dart';
 import 'package:bullet_comments/pages/bullet_add/bullet_add_binding.dart';
 import 'package:bullet_comments/pages/bullet_add/bullet_add_view.dart';
+import 'package:bullet_comments/pages/bullet_add/bullet_font_list.dart';
 import 'package:bullet_comments/pages/bullet_details/bullet_details_binding.dart';
 import 'package:bullet_comments/pages/bullet_details/bullet_details_view.dart';
 import 'package:bullet_comments/pages/bullet_fail/bullet_fail_binding.dart';
 import 'package:bullet_comments/pages/bullet_fail/bullet_fail_view.dart';
 import 'package:bullet_comments/pages/bullet_main/bullet_main_binding.dart';
 import 'package:bullet_comments/pages/bullet_main/bullet_main_view.dart';
+import 'package:bullet_comments/pages/bullet_scroll/bullet_scroll_binding.dart';
+import 'package:bullet_comments/pages/bullet_scroll/bullet_scroll_view.dart';
 import 'package:bullet_comments/pages/bullet_setting/bullet_setting_binding.dart';
 import 'package:bullet_comments/pages/bullet_setting/bullet_setting_view.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +45,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Pexel,
-      initialRoute: '/bullet_main',
+      initialRoute: '/bullet',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -80,9 +83,11 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Pexel = [
+  GetPage(name: '/bullet', page: () => const BulletScrollView(), binding: BulletScrollBinding()),
   GetPage(name: '/bullet_main', page: () => const BulletMainPage(), binding: BulletMainBinding()),
   GetPage(name: '/bullet_fail', page: () => BulletFailView(), binding: BulletFailBinding()),
   GetPage(name: '/bullet_add', page: () => BulletAddPage(), binding: BulletAddBinding()),
+  GetPage(name: '/bullet_font', page: () => BulletFontList()),
   GetPage(name: '/bullet_details', page: () => BulletDetailsPage(), binding: BulletDetailsBinding()),
   GetPage(name: '/bullet_setting', page: () => BulletSettingPage(), binding: BulletSettingBinding()),
 ];
