@@ -13,19 +13,16 @@ class BulletSettingPage extends GetView<BulletSettingLogic> {
       height: 40,
       child: <Widget>[
         Text(titles[index]),
-        const Icon(
+        index == 0 ? const Icon(
           Icons.keyboard_arrow_right,
           size: 20,
           color: Colors.grey,
-        )
+        ) : const Text("v1.0.0")
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
     ).gestures(onTap: () {
       switch (index) {
         case 0:
           controller.cleanBulletData();
-          break;
-        case 1:
-          controller.aboutBulletUS(context);
           break;
 
       }
